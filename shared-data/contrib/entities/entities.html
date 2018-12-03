@@ -129,7 +129,7 @@ Mailpile printout. Complete raw message headers:
                   {% endif %}
                 {% endfor %}
             </p>
-            {{result.entities}}
+            {{result.entities|safe}}
             <p id="message"><tt style="font-size: 12px; line-height: 100%;">
                 {%- set message = result.message %}
                 {%- set last_enc_context = message.crypto.encryption.context %}
