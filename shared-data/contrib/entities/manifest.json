@@ -1,0 +1,35 @@
+{
+    "name": "entities",
+    "author": "Philipp Moritz <pcmoritz@gmail.com>",
+    "description": "Displays entity information for e-mail.",
+    "display": true,
+    "public": true,
+    "code": {
+        "python": ["entities.py"],
+        "javascript": ["entities.js"]
+    },
+    "routes": {
+        "/message/entities/": {"file": "entities.html", "api": 0},
+        "/static/img/entities.png": {"file": "entities.png"}
+    },
+    "commands": [
+        {
+            "class": "EntityView",
+            "input": "message",
+            "name": "entities"
+        }
+    ],
+    "user_interface": {
+        "display_modes": [
+            {
+                "context": ["/message/"],
+                "name": "entities",
+                "text": "Entities",
+                "description": "Show Entities in Message",
+                "icon": "/static/img/entities.png",
+                "url": "/message/entities/",
+                "javascript_setup": "setup_entities_button"
+            }
+        ]
+    }
+}
