@@ -12,6 +12,8 @@ class EntityView(View):
     @classmethod
     def view(cls, result):
         mid = result["message_ids"][0]
-        print("XXX", result["data"]["messages"][mid])
+        messages = result["data"]["messages"][mid]
+        plaintext = messages['text_parts'][0]['data']
         return {"message": result["data"]["messages"][mid],
-                "metadata": result["data"]["metadata"][mid]}
+                "metadata": result["data"]["metadata"][mid],
+                "plaintext": plaintext}
